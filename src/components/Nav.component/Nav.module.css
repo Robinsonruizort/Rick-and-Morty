@@ -1,0 +1,64 @@
+body {
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+
+}
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 10px;
+    padding: 1.5px;
+    border: black 2px hidden;
+    margin-left: 0%;
+    margin-right: 0%;
+    background-color: none;
+    
+    
+}
+
+.link {
+    font-size: 14px;
+    display: flex;
+    text-decoration: none;
+}
+
+
+.barra {
+    border-radius: 0px;
+    transition: .3s;
+    color: black;
+    border: hidden;
+    background-color: transparent;
+    cursor: pointer;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.button1 {
+    border-radius: 0px;
+    transition: .3s;
+    color: black;
+    border: hidden;
+    background-color: transparent;
+    cursor: pointer;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 16px;
+}
+    
+.barra:hover {
+
+    background-color: black;
+    color: white;
+    border-radius: 5%;
+    
+}
+
+

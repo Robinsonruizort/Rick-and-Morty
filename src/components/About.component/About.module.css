@@ -1,0 +1,11 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.about {
+justify-content: center;
+margin-left: 5%;
+margin-right: 5%;
+}

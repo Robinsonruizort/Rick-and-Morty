@@ -1,25 +1,82 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import Cards from './components/Cards.component/Cards';
+import Nav from "./components/Nav.component/Nav";
+import About from './components/About.component/About';
+import Detail from './components/Detail.component/Detail';
+import Error from './components/Error.404/404';
+import { useState } from "react";
+import {Routes, Route, useLocation, useNavigate} from "react-router-dom"
+import Form from './components/Form.component/form';
+import { useEffect } from 'react';
+import Favorites from './components/Favorites.component/favorites';
 
-function App() {
+
+
+
+function App () {
+    const [characters, setCharacters] = useState([]);
+    // const location = useLocation();
+    const navigate = useNavigate();
+    const [access, setAccess] = useState(false);
+
+    const username = "email@prueba.com";
+    const password = "12345a";
+
+    const login = (userData) => {
+      if(userData.username === username && userData.password === password) {  
+        setAccess(true)
+        navigate("/home");
+      }
+    }
+
+    const logOut = () => {
+      setAccess(false)
+      navigate("/")
+    }
+
+    useEffect(() => {
+      !access && navigate('/')
+    }, [access])
+
+    const onSearch = (character) => {
+      if(characters.find((repetido) => repetido.id == character)){
+      return
+      }
+      fetch(`https://rickandmortyapi.com/api/character/${character}`)
+      .then((response) => response.json())
+      .then((data) => {
+         if (data.name) {
+            setCharacters((oldChars) => [...oldChars, data]);
+         } else {
+            window.alert('No hay personajes con ese ID');
+         }
+      });
+    }
+
+    const onClose = (id) => {
+      setCharacters(
+        characters.filter(character => character.id !== id)
+      )
+    }
+
+    const closeCards = () => {
+      setCharacters([])
+    }
+
+    
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App' style={{ padding: '2px' }}>
+      {useLocation().pathname === "/" ? <Form login={login}/> : <Nav  logOut={logOut}/>}
+      <Routes>
+        <Route path="home" element= {<Cards onSearch={onSearch} closeCards={closeCards} onClose={onClose} characters={characters}/>}> </Route>
+        <Route path="about" element={<About/>}></Route>
+        <Route path="detail/:detailId" element={<Detail/>}></Route>
+        <Route path="favorites" element={<Favorites/>}></Route>
+        <Route path="*" element={<Error/>}></Route>
+      </Routes>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
