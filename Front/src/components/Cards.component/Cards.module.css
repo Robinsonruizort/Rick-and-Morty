@@ -7,6 +7,8 @@ background-repeat: no-repeat;
 background-size: 100% 100%;
 background-attachment: fixed;
 }
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap');
+
 
 .Cards {
     padding: 2px;
@@ -49,9 +51,10 @@ background-attachment: fixed;
 
 .loader {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    font-size: 24px;
     justify-content: center;
     margin-top: 100px;
-    background-color: black;
+    font-family: 'Bruno Ace SC', cursive;
     color: white;
+    background-color: #09f;
 }
