@@ -1,0 +1,49 @@
+body {
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+
+}
+.login {
+    font-size: 24px;
+    border: 1px solid white;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 160px;
+    max-height: 320px;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 80px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-image: url(C:\Users\robin\OneDrive\Escritorio\Practica-HTML-y-CSS\rick-and-morty\Front\src\components\Form.component\cc4fbbc37dd94a33fbee0d54a39dfd86.jpg);
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    border-radius: 10%;
+    color: white;
+    height: fit-content;
+}
+
+.options {
+    background-color: #339989;
+    padding: 10px;
+    border-radius: 10%;
+    opacity: 80%;
+    font-family: cursive, sans-serif;
+    margin-top: 5px;
+}
+
+.errors{
+    width: fit-content;
+    color: white;
+    font-size: 10px;
+}
+
+.input{
+    justify-content: center;
+    margin-bottom: 0px;
+}
+

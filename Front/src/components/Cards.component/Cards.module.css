@@ -1,0 +1,57 @@
+body {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+background-image: url("C:\Users\robin\OneDrive\Escritorio\Practica-HTML-y-CSS\rick-and-morty\Front\public\fondo.png");
+background-repeat: no-repeat;
+background-size: 100% 100%;
+background-attachment: fixed;
+}
+
+.Cards {
+    padding: 2px;
+    border: 10px hidden red;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.barra1 {
+    border-radius: 6px;
+    transition: .3s;
+    padding-left: 24px;
+    padding-right: 24px;
+    color: white;
+    padding: 10px; 
+    background-color: #1EE218;
+    border: hidden;
+}
+
+
+.barra1:hover {
+    background-image: linear-gradient(
+        150deg,
+        #9500ff,
+        #09f,
+        #00DDFF
+    );
+}
+
+.boton {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 10px;
+    margin-left: 40%;
+    margin-right: 40%;
+}
+
+.loader {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    justify-content: center;
+    margin-top: 100px;
+    background-color: black;
+    color: white;
+}
